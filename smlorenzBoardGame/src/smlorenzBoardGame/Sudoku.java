@@ -42,15 +42,18 @@ public class Sudoku {
         Scanner scan = new Scanner(new FileInputStream(filename));
         for (int r=0; r<9; r++) {
           for (int c=0; c<9; c++) {
-        	  while(scan.hasNext()) {
+        	  //while(scan.hasNext()) {
         		  String n = scan.next();
         		  if (!n.equals("0")) {
         			  this.setNums(r, c, n);
         		  	}
+        		  if(n.equals("0")) {
+        			  this.setNums(r, c, "");
+        		  }
         	  	}
           	}
         }
-    }
+   // }
     
     /**
      * Creating a new Sudoku board that is blank.

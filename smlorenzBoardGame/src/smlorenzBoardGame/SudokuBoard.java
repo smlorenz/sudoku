@@ -33,7 +33,7 @@ import javax.swing.JTextArea;
 		
 		protected final int MARGIN_SIZE = 5;
 	    protected final int DOUBLE_MARGIN_SIZE = MARGIN_SIZE*2;
-	    protected int squareSize = 100;
+	    protected int squareSize = 75;
 	    private int numRows = 9;
 	    private int numCols = 9;
 	    
