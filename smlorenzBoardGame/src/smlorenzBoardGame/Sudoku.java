@@ -87,13 +87,13 @@ public class Sudoku {
     }
     
     public boolean difficultyLevel(String filename) {
-    	if(filename.equals("EasyPuzzle")) {
+    	if(filename.equals("Puzzles/EasyPuzzle.txt")) {
     		return true;
-    	} else if(filename.equals("MediumPuzzle")) {
+    	} else if(filename.equals("Puzzles/MediumPuzzle.txt")) {
     		return true;
-    	} else if(filename.equals("HardPuzzle")) {
+    	} else if(filename.equals("Puzzles/HardPuzzle.txt")) {
     		return true;
-    	} else if(filename.equals("EvilPuzzle")) {
+    	} else if(filename.equals("Puzzles/EvilPuzzle.txt")) {
     		return true;
     	}
     	return false;

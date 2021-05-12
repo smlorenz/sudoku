@@ -142,7 +142,7 @@ import javax.swing.JTextArea;
 	        addToMenu(solutionMenu, "Show solution", new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	            	if(sudoku.difficultyLevel("EasyPuzzle")) {
+	            	if(sudoku.difficultyLevel("Puzzles/EasyPuzzle.txt")) {
 	                try {
 						sudoku.showSolution("EasyPuzzleSolutions");
 					} catch (IOException e1) {
@@ -150,7 +150,7 @@ import javax.swing.JTextArea;
 						e1.printStackTrace();
 					}
 	            	}
-	            	if(sudoku.difficultyLevel("MediumPuzzle")) {
+	            	if(sudoku.difficultyLevel("Puzzles/MediumPuzzle.txt")) {
 		                try {
 							sudoku.showSolution("MediumPuzzleSolutions");
 						} catch (IOException e1) {
@@ -158,7 +158,7 @@ import javax.swing.JTextArea;
 							e1.printStackTrace();
 						}
 		            }
-	            	if(sudoku.difficultyLevel("HardPuzzle")) {
+	            	if(sudoku.difficultyLevel("Puzzles/HardPuzzle.txt")) {
 		                try {
 							sudoku.showSolution("HardPuzzleSolutions");
 						} catch (IOException e1) {
@@ -166,7 +166,7 @@ import javax.swing.JTextArea;
 							e1.printStackTrace();
 						}
 		            }
-	            	if(sudoku.difficultyLevel("EvilPuzzle")) {
+	            	if(sudoku.difficultyLevel("Puzzles/EvilPuzzle.txt")) {
 		                try {
 							sudoku.showSolution("EvilPuzzleSolutions");
 						} catch (IOException e1) {
