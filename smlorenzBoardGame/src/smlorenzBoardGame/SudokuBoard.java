@@ -150,7 +150,7 @@ import javax.swing.JTextArea;
 						e1.printStackTrace();
 					}
 	            	}
-	            	if(sudoku.difficultyLevel("Puzzles/MediumPuzzle.txt")) {
+	            	if(sudoku.difficultyLevel("MediumPuzzle")) {
 		                try {
 							sudoku.showSolution("MediumPuzzleSolutions");
 						} catch (IOException e1) {

@@ -82,6 +82,7 @@ public class Sudoku {
     }
     
     public void showSolution(String filename) throws IOException {
+    	//this.configureBoard();
     	this.loadNumbers(filename);
     }
     
