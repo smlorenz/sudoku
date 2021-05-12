@@ -150,7 +150,7 @@ import javax.swing.JTextArea;
 						e1.printStackTrace();
 					}
 	            	}
-	            	if(sudoku.difficultyLevel("MediumPuzzle")) {
+	            	if(sudoku.difficultyLevel("Puzzles/MediumPuzzle.txt")) {
 		                try {
 							sudoku.showSolution("MediumPuzzleSolutions");
 						} catch (IOException e1) {
@@ -195,7 +195,6 @@ import javax.swing.JTextArea;
 	    }
 	    
 	    public SudokuBoard() {
-	        //random = new Random(299);
 	        sudoku = new Sudoku("EasyPuzzle");
 	        sudoku.configureBoard();
 	        
