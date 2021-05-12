@@ -93,7 +93,7 @@ public class Sudoku {
     		return true;
     	} else if(filename.equals("Puzzles/HardPuzzle.txt")) {
     		return true;
-    	} else if(filename.equals("Puzzles/EvilPuzzle.txt")) {
+    	} else if(filename.equals("Puzzles/EvilPuzzle")) {
     		return true;
     	}
     	return false;
