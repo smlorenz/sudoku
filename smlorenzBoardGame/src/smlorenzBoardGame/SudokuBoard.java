@@ -143,39 +143,61 @@ import javax.swing.JTextArea;
 	        addToMenu(solutionMenu, "Show solution", new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	            	if(sudoku.difficultyLevel("Puzzles/EasyPuzzle.txt")) {
-	                try {
-						sudoku.showSolution("EasyPuzzleSolutions");
+	            	try {
+						sudoku.difficultyLevel("EasyPuzzle");
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
+	        
+	            	try {
+						sudoku.difficultyLevel("MediumPuzzle");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	            	try {
+						sudoku.difficultyLevel("HardPuzzle");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	            	try {
+						sudoku.difficultyLevel("EvilPuzzle");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	            
+	      
+//	            	public void actionPerformed1(ActionEvent m) {
+//	            	try {
+//						sudoku.showSolution("MediumPuzzleSolutions");
+//					} catch (IOException e1) {
+//						// TODO Auto-generated catch block
+//						e1.printStackTrace();
+//					}
+//	            	repaint();
+//	            	}
+	       
+//	            	public void actionPerformed11(ActionEvent p) {
+//	            	try {
+//						sudoku.difficultyLevel("HardPuzzle");
+//					} catch (IOException e1) {
+//						// TODO Auto-generated catch block
+//						e1.printStackTrace();
+//					}
+//	            	repaint();
+//	        }
+//	            	public void actionPerformed113(ActionEvent x) {
+//		            	try {
+//							sudoku.difficultyLevel("EvilPuzzle");
+//						} catch (IOException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+		            	repaint();
 	            	}
-	            	if(sudoku.difficultyLevel("Puzzles/MediumPuzzle.txt")) {
-		                try {
-							sudoku.showSolution("MediumPuzzleSolutions");
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-		            }
-	            	if(sudoku.difficultyLevel("Puzzles/HardPuzzle.txt")) {
-		                try {
-							sudoku.showSolution("HardPuzzleSolutions");
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-		            }
-	            	if(sudoku.difficultyLevel("Puzzles/EvilPuzzle.txt")) {
-		                try {
-							sudoku.showSolution("EvilPuzzleSolutions");
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-		            }
-	            }
 	        });
 	        this.setJMenuBar(menuBar);
 	    }

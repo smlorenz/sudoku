@@ -86,17 +86,17 @@ public class Sudoku {
     	this.loadNumbers(filename);
     }
     
-    public boolean difficultyLevel(String filename) {
-    	if(filename.equals("Puzzles/EasyPuzzle.txt")) {
-    		return true;
-    	} else if(filename.equals("Puzzles/MediumPuzzle.txt")) {
-    		return true;
-    	} else if(filename.equals("Puzzles/HardPuzzle.txt")) {
-    		return true;
-    	} else if(filename.equals("Puzzles/EvilPuzzle")) {
-    		return true;
+    public void difficultyLevel(String filename) throws IOException {
+    	//String d = "Not Valid";
+    	if(filename.equals("EasyPuzzle")) {
+    		this.showSolution("EasyPuzzleSolutions");
+    	} else if(filename.equals("MediumPuzzle")) {
+    		this.showSolution("MediumPuzzleSolutions");
+    	} else if(filename.equals("HardPuzzle")) {
+    		this.showSolution("HardPuzzleSolutions");
+    	} else if(filename.equals("EvilPuzzle")) {
+    		this.showSolution("EvilPuzzleSolutions");
     	}
-    	return false;
     }
     
   
