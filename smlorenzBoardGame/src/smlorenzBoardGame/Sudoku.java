@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Sudoku {
 	
 	private String[][] board = new String[9][9];
-	private String e ="EasyPuzzle";
+	private String e = "EasyPuzzle";
 	private String m = "MediumPuzzle";
 	private String h = "HardPuzzle";
 	private String ev = "EvilPuzzle";
@@ -91,14 +91,15 @@ public class Sudoku {
     	this.loadNumbers(filename);
     }
     
-    public void difficultyLevel(String filename) throws IOException {
+    @SuppressWarnings("unlikely-arg-type")
+	public void difficultyLevel(String filename) throws IOException {
     	if(filename.equals(e)) {
     		this.showSolution("EasyPuzzleSolutions");
     	} else if(filename.equals(m)) {
     		this.showSolution("MediumPuzzleSolutions");
-    	} else if(filename.equals(h)) {
+    	} else if(this.equals(h)) {
     		this.showSolution("HardPuzzleSolutions");
-    	} else if(filename.equals(ev)) {
+    	} else if(this.equals(ev)) {
     		this.showSolution("EvilPuzzleSolutions");
     	}
     }
