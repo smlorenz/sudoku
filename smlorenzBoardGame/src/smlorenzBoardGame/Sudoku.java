@@ -7,6 +7,11 @@ import java.util.Scanner;
 public class Sudoku {
 	
 	private String[][] board = new String[9][9];
+	private String e ="EasyPuzzle";
+	private String m = "MediumPuzzle";
+	private String h = "HardPuzzle";
+	private String ev = "EvilPuzzle";
+	
     
     /**
      * Get the num at rc
@@ -87,14 +92,13 @@ public class Sudoku {
     }
     
     public void difficultyLevel(String filename) throws IOException {
-    	//String d = "Not Valid";
-    	if(filename.equals("EasyPuzzle")) {
+    	if(filename.equals(e)) {
     		this.showSolution("EasyPuzzleSolutions");
-    	} else if(filename.equals("MediumPuzzle")) {
+    	} else if(filename.equals(m)) {
     		this.showSolution("MediumPuzzleSolutions");
-    	} else if(filename.equals("HardPuzzle")) {
+    	} else if(filename.equals(h)) {
     		this.showSolution("HardPuzzleSolutions");
-    	} else if(filename.equals("EvilPuzzle")) {
+    	} else if(filename.equals(ev)) {
     		this.showSolution("EvilPuzzleSolutions");
     	}
     }
