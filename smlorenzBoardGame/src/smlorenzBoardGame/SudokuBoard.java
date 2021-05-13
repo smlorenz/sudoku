@@ -1,5 +1,7 @@
 package smlorenzBoardGame;
 import java.awt.BorderLayout;
+import java.io.*;
+import java.util.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -15,7 +17,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Random;
-
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -82,6 +83,17 @@ import javax.swing.JTextArea;
 	        JMenu menu = new JMenu("Actions");
 	        menuBar.add(menu);
 	        
+	        JMenuItem itemExit = new JMenuItem ("Exit");
+	        menu.add(itemExit);
+	        itemExit.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                String text=e.getActionCommand();
+	                System.out.println(text);
+	                System.exit(0);
+	            }
+	        });
+	        
+	        
 	        JMenu difficultyMenu = new JMenu("Difficulty");
 	        menuBar.add(difficultyMenu);
 	        
@@ -144,58 +156,30 @@ import javax.swing.JTextArea;
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
 	            	try {
-						sudoku.difficultyLevel("EasyPuzzle");
+						sudoku.difficultyLevel();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 	        
 	            	try {
-						sudoku.difficultyLevel("MediumPuzzle");
+						sudoku.difficultyLevel();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 	            	try {
-						sudoku.difficultyLevel("HardPuzzle");
+						sudoku.difficultyLevel();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 	            	try {
-						sudoku.difficultyLevel("EvilPuzzle");
+						sudoku.difficultyLevel();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-	            
-	      
-//	            	public void actionPerformed1(ActionEvent m) {
-//	            	try {
-//						sudoku.showSolution("MediumPuzzleSolutions");
-//					} catch (IOException e1) {
-//						// TODO Auto-generated catch block
-//						e1.printStackTrace();
-//					}
-//	            	repaint();
-//	            	}
-	       
-//	            	public void actionPerformed11(ActionEvent p) {
-//	            	try {
-//						sudoku.difficultyLevel("HardPuzzle");
-//					} catch (IOException e1) {
-//						// TODO Auto-generated catch block
-//						e1.printStackTrace();
-//					}
-//	            	repaint();
-//	        }
-//	            	public void actionPerformed113(ActionEvent x) {
-//		            	try {
-//							sudoku.difficultyLevel("EvilPuzzle");
-//						} catch (IOException e1) {
-//							// TODO Auto-generated catch block
-//							e1.printStackTrace();
-//						}
 		            	repaint();
 	            	}
 	        });
