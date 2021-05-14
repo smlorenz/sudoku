@@ -149,6 +149,48 @@ import javax.swing.JTextArea;
 	            }
 	        });
 	        
+	        JMenu hintMenu = new JMenu("Hints");
+	        menuBar.add(hintMenu);
+	        
+	        addToMenu(hintMenu, "Hint 1", new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                try {
+						sudoku.loadNumbers("EasyPuzzle");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	                repaint();
+	            }
+	        });
+	        
+	        addToMenu(hintMenu, "Hint 2", new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                try {
+						sudoku.loadNumbers("EasyPuzzle");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	                repaint();
+	            }
+	        });
+	        
+	        addToMenu(hintMenu, "Hint 3", new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                try {
+						sudoku.loadNumbers("EasyPuzzle");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	                repaint();
+	            }
+	        });
+	        
 	        JMenu solutionMenu = new JMenu("Solutions");
 	        menuBar.add(solutionMenu);
 	        
@@ -182,6 +224,21 @@ import javax.swing.JTextArea;
 					}
 		            	repaint();
 	            	}
+	        });
+	        
+	        JMenu instructionMenu = new JMenu("How to play");
+	        menuBar.add(instructionMenu);
+	        
+	        addToMenu(instructionMenu, "Instructions", new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                System.out.println("Sudoku is a game of patience. Fill in the columns and rows with numbers 1-9. "
+	                		+ "Make sure that there are NO repeat numbers in any row, column, or 3x3 box. "
+	                		+ "To inut numbers, click on the box, then type the number you wish."
+	                		+ "To change difficulty, go to the difficulty menu and select. For a hint, choose 1 hint up to 3. "
+	                		+ "To revela solution, click on the solutions. TO exit the game, go to the actions button. Most of all, h"
+	                		+ "ave fun!");
+	            }
 	        });
 	        this.setJMenuBar(menuBar);
 	    }
