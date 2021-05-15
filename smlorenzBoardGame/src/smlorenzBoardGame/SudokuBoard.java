@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
@@ -27,7 +28,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 	public class SudokuBoard extends JFrame {
-	    private Random random;
 	  //TODO: add in this class
 	    private Sudoku sudoku; 
 	    
@@ -256,6 +256,33 @@ import javax.swing.JTextArea;
 					System.out.println(e.getKeyChar());
 				}
 			});
+	    }
+	    
+	    private void initializeKeyListener()
+	    {
+	        canvas.addKeyListener(new KeyListener() {
+	            public void keyPressed(KeyEvent e) {
+	            	// Called when you push a key down
+	            	System.out.println("key pressed: " + e.getKeyChar());
+	            	if (e.getKeyCode() == KeyEvent.VK_1) {
+	            		//TODO add in box
+	            	}
+	            	repaint();
+	            }
+	            public void keyReleased(KeyEvent e){
+	            	// Called when you release a key and it goes up
+	            	System.out.println("key released: " + e.getKeyChar());
+	            }
+	            public void keyTyped(KeyEvent e) {
+	            	// Gets called when you push a key down and then release it,
+	            	// without pushing any other keys in between
+	            	System.out.println("key typed: " + e.getKeyChar());
+	            	if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
+	            		//TODO remove in box
+	            	}
+	            	repaint();
+	            }
+	        });
 	    }
 	    
 	    public SudokuBoard() {
