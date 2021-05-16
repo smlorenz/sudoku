@@ -232,12 +232,16 @@ import javax.swing.JTextArea;
 	        addToMenu(instructionMenu, "Instructions", new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                System.out.println("Sudoku is a game of patience. Fill in the columns and rows with numbers 1-9. "
-	                		+ "Make sure that there are NO repeat numbers in any row, column, or 3x3 box. "
-	                		+ "To inut numbers, click on the box, then type the number you wish."
-	                		+ "To change difficulty, go to the difficulty menu and select. For a hint, choose 1 hint up to 3. "
-	                		+ "To revela solution, click on the solutions. TO exit the game, go to the actions button. Most of all, h"
-	                		+ "ave fun!");
+	            	 JTextArea textArea = new JTextArea(10, 30);
+	                 textArea.setText("Sudoku is a game of patience. Fill in the columns and rows with numbers 1-9. "
+		                		+ "Make sure that there are NO repeat numbers in any row, column, or 3x3 box. "
+		                		+ "To inut numbers, click on the box, then type the number you wish."
+		                		+ "To change difficulty, go to the difficulty menu and select. For a hint, choose 1 hint up to 3. "
+		                		+ "To revela solution, click on the solutions. T exit the game, go to the actions button. Most of all, h"
+		                		+ "ave fun!");
+	                 textArea.setEditable(false);
+	                 JScrollPane scrollPane = new JScrollPane(textArea);
+	                 JOptionPane.showMessageDialog(canvas, scrollPane);
 	            }
 	        });
 	        this.setJMenuBar(menuBar);
