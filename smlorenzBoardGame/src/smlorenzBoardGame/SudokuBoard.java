@@ -285,6 +285,8 @@ import javax.swing.JTextArea;
 	    				System.out.printf("Mouse cliked at (%d, %d)\n", e.getX(), e.getY());
 	    				x = (e.getX()-MARGIN_SIZE)/squareSize;
 	    				y = (e.getY()-MARGIN_SIZE)/squareSize;
+//	    				System.out.println(x); //this is working fine, so why not for key :(
+//	    				System.out.println(y);
 	    				
 	    				if(e.getButton()==MouseEvent.BUTTON1) {
 	    					//?
@@ -320,15 +322,47 @@ import javax.swing.JTextArea;
 	    
 	    private void initializeKeyListener() //adding keys to input stuff in sudoku
 	    {
-	        canvas.addKeyListener(new KeyListener() {
+	        this.addKeyListener(new KeyListener() {
 	            public void keyPressed(KeyEvent e) {
 	            	// Called when you push a key down
 	            	System.out.println("key pressed: " + e.getKeyChar());
-	            	if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-	            		System.out.println("You have added 1.");
+	            	if (e.getKeyChar() == KeyEvent.VK_1) {
 	            		sudoku.addNumber("1", x, y);
+	            		System.out.println("You have added 1."); 
 	            	}
-	            	//repaint();
+	            	if (e.getKeyChar() == KeyEvent.VK_2) {
+	            		sudoku.addNumber("2", x, y);
+	            		System.out.println("You have added 2."); 
+	            	}
+	            	if (e.getKeyChar() == KeyEvent.VK_3) {
+	            		sudoku.addNumber("3", x, y);
+	            		System.out.println("You have added 3."); 
+	            	}
+	            	if (e.getKeyChar() == KeyEvent.VK_4) {
+	            		sudoku.addNumber("4", x, y);
+	            		System.out.println("You have added 4."); 
+	            	}
+	            	if (e.getKeyChar() == KeyEvent.VK_5) {
+	            		sudoku.addNumber("5", x, y);
+	            		System.out.println("You have added 5."); 
+	            	}
+	            	if (e.getKeyChar() == KeyEvent.VK_6) {
+	            		sudoku.addNumber("6", x, y);
+	            		System.out.println("You have added 6."); 
+	            	}
+	            	if (e.getKeyChar() == KeyEvent.VK_7) {
+	            		sudoku.addNumber("7", x, y);
+	            		System.out.println("You have added 7."); 
+	            	}
+	            	if (e.getKeyChar() == KeyEvent.VK_8) {
+	            		sudoku.addNumber("8", x, y);
+	            		System.out.println("You have added 8."); 
+	            	}
+	            	if (e.getKeyChar() == KeyEvent.VK_9) {
+	            		sudoku.addNumber("9", x, y);
+	            		System.out.println("You have added 9."); 
+	            	}
+	            	repaint();
 	            }
 	            public void keyReleased(KeyEvent e){
 	            	// Called when you release a key and it goes up
@@ -343,7 +377,6 @@ import javax.swing.JTextArea;
 	            	}
 	            }
 	        });
-	        repaint();
 	    }
 	    
 	    public SudokuBoard() {

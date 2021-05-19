@@ -103,7 +103,8 @@ public class Sudoku {
     }
 	
 	public void addNumber(String n, int x, int y) { //trying to add number to certain row at certain column??
-		board[x][y] = n;
+		
+		this.setNums(y, x, n);
 	}
 	
 	public void showHint() { //show one number on each board for hint 1, hint 2,, and hint 3
