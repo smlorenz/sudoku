@@ -1,4 +1,5 @@
 package smlorenzBoardGame;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collection;
@@ -100,4 +101,12 @@ public class Sudoku {
     		this.showSolution("EvilPuzzleSolutions");
     	}
     }
+	
+	public void addNumber(String n, int x, int y) { //trying to add number to certain row at certain column??
+		board[x][y] = n;
+	}
+	
+	public void showHint() { //show one number on each board for hint 1, hint 2,, and hint 3
+		
+	}
 }

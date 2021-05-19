@@ -12,6 +12,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
@@ -40,7 +43,10 @@ import javax.swing.JTextArea;
 	    private int numCols = 9;
 	    
 	    private int width = DOUBLE_MARGIN_SIZE + squareSize * numCols;    		
-	    private int height = DOUBLE_MARGIN_SIZE + squareSize * numRows;    		
+	    private int height = DOUBLE_MARGIN_SIZE + squareSize * numRows;   
+	    private int x;
+	    private int y;
+	    
 	    
 	    private JPanel canvas;
 	    private JMenuBar menuBar;
@@ -237,7 +243,7 @@ import javax.swing.JTextArea;
 		                		+ "Make sure that there are NO repeat numbers in any row, column, or 3x3 box. "
 		                		+ "To inut numbers, click on the box, then type the number you wish."
 		                		+ "To change difficulty, go to the difficulty menu and select. For a hint, choose 1 hint up to 3. "
-		                		+ "To revela solution, click on the solutions. T exit the game, go to the actions button. Most of all, h"
+		                		+ "To revela solution, click on the solutions. To exit the game, go to the actions button. Most of all, h"
 		                		+ "ave fun!");
 	                 textArea.setEditable(false);
 	                 JScrollPane scrollPane = new JScrollPane(textArea);
@@ -262,16 +268,66 @@ import javax.swing.JTextArea;
 			});
 	    }
 	    
-	    private void initializeKeyListener()
+	    private void createMouseHandlers() {
+	    	this.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					System.out.printf("Mouse cliked at (%d, %d)\n", e.getX(), e.getY());
+				}
+			});
+	    }
+	    
+	    private void initializeMouseListener() //trying to add stuff to get where we are
+	    {
+	    	//MouseAdapter a = new MouseAdapter() {
+	    		canvas.addMouseListener(new MouseListener() {
+	    			public void mouseClicked(MouseEvent e) {
+	    				System.out.printf("Mouse cliked at (%d, %d)\n", e.getX(), e.getY());
+	    				x = (e.getX()-MARGIN_SIZE)/squareSize;
+	    				y = (e.getY()-MARGIN_SIZE)/squareSize;
+	    				
+	    				if(e.getButton()==MouseEvent.BUTTON1) {
+	    					//sudoku.addNumber(, e.getX(), e.getY());
+	    				}
+	    		}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+	    	});
+	    		repaint();
+	    }
+	    
+	    private void initializeKeyListener() //adding keys to input stuff in sudoku
 	    {
 	        canvas.addKeyListener(new KeyListener() {
 	            public void keyPressed(KeyEvent e) {
 	            	// Called when you push a key down
 	            	System.out.println("key pressed: " + e.getKeyChar());
 	            	if (e.getKeyCode() == KeyEvent.VK_1) {
-	            		//TODO add in box
+	            		sudoku.addNumber("1", x, y);
 	            	}
-	            	repaint();
+	            	//repaint();
 	            }
 	            public void keyReleased(KeyEvent e){
 	            	// Called when you release a key and it goes up
@@ -284,14 +340,16 @@ import javax.swing.JTextArea;
 	            	if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
 	            		//TODO remove in box
 	            	}
-	            	repaint();
 	            }
 	        });
+	        repaint();
 	    }
 	    
 	    public SudokuBoard() {
 	        sudoku = new Sudoku("EasyPuzzle");
 	        sudoku.configureBoard();
+	        //initializeMouseListener();
+	        //initializeKeyListener();
 	        
 	        setTitle("Sudoku!");
 
@@ -346,6 +404,7 @@ import javax.swing.JTextArea;
 	        
 	        createMenuBar();
 	        createKeyboardHandlers();
+	        createMouseHandlers();
 	        
 	        addWindowListener(new WindowAdapter() {
 	            public void windowClosing(WindowEvent e) {
