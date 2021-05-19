@@ -287,7 +287,7 @@ import javax.swing.JTextArea;
 	    				y = (e.getY()-MARGIN_SIZE)/squareSize;
 	    				
 	    				if(e.getButton()==MouseEvent.BUTTON1) {
-	    					//sudoku.addNumber(, e.getX(), e.getY());
+	    					//?
 	    				}
 	    		}
 
@@ -324,7 +324,8 @@ import javax.swing.JTextArea;
 	            public void keyPressed(KeyEvent e) {
 	            	// Called when you push a key down
 	            	System.out.println("key pressed: " + e.getKeyChar());
-	            	if (e.getKeyCode() == KeyEvent.VK_1) {
+	            	if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+	            		System.out.println("You have added 1.");
 	            		sudoku.addNumber("1", x, y);
 	            	}
 	            	//repaint();
@@ -401,6 +402,9 @@ import javax.swing.JTextArea;
 	        this.pack();
 	        this.setLocation(100,100);
 	        this.setFocusable(true);
+	        
+	        this.initializeKeyListener();
+	        this.initializeMouseListener();
 	        
 	        createMenuBar();
 	        createKeyboardHandlers();
