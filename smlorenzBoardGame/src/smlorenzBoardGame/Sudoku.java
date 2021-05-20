@@ -1,6 +1,7 @@
 package smlorenzBoardGame;
 import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Scanner;
@@ -102,15 +103,6 @@ public class Sudoku {
     }
 	
 	public void addNumber(String n, int x, int y) { //trying to add number to certain row at certain column??
-		for(int r=0; r<1; r++) {
-			for(int c=0; c<9; c++) {
-				if(board[r][c] == n) {
-					System.out.println(board[r][c]);
-					throw new IllegalArgumentException();
-				}
-				
-			}
-		}
 		this.setNums(y, x, n);
 	}
 	

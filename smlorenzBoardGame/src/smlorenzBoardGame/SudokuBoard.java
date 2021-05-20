@@ -17,8 +17,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Collection;
 import java.util.Random;
 import javax.swing.JFrame;
@@ -278,6 +276,8 @@ import javax.swing.JTextArea;
 	    				System.out.printf("Mouse cliked at (%d, %d)\n", e.getX(), e.getY());
 	    				x = (e.getX()-MARGIN_SIZE)/squareSize;
 	    				y = (e.getY()-MARGIN_SIZE)/squareSize;
+	    				System.out.println(x);
+	    				System.out.println(y);
 	    		}
 
 					@Override
