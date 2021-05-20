@@ -31,7 +31,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 	public class SudokuBoard extends JFrame {
-	  //TODO: add in this class
+	  //general stuffs and things
 	    private Sudoku sudoku; 
 	    
 		private static final long serialVersionUID = 1L;
@@ -82,7 +82,7 @@ import javax.swing.JTextArea;
 	        
 	    }
 		
-		//TODO: new game? reset? hints?
+		//making menu items
 	    
 	    private void createMenuBar() {
 	    	menuBar = new JMenuBar();
@@ -99,7 +99,7 @@ import javax.swing.JTextArea;
 	            }
 	        });
 	        
-	        
+	        //pick a board any board
 	        JMenu difficultyMenu = new JMenu("Difficulty");
 	        menuBar.add(difficultyMenu);
 	        
@@ -155,13 +155,15 @@ import javax.swing.JTextArea;
 	            }
 	        });
 	        
+	        //everyone loves a hint or 3... I did it like this because when I play
+	        //games I like knowing EXACTLY how many hints I have 
 	        JMenu hintMenu = new JMenu("Hints");
 	        menuBar.add(hintMenu);
 	        
 	        addToMenu(hintMenu, "Hint 1", new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                sudoku.showHint1();
+	                sudoku.showHint1(); //this was easy.
 	                repaint();
 	            }
 	        });
@@ -182,6 +184,7 @@ import javax.swing.JTextArea;
 	            }
 	        });
 	        
+	        //for when you just need the answers
 	        JMenu solutionMenu = new JMenu("Solutions");
 	        menuBar.add(solutionMenu);
 	        
@@ -196,7 +199,7 @@ import javax.swing.JTextArea;
 					}
 	        
 	            	try {
-						sudoku.difficultyLevel();
+						sudoku.difficultyLevel(); //changed this so it's simple.
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -217,6 +220,7 @@ import javax.swing.JTextArea;
 	            	}
 	        });
 	        
+	        //we need instructions!!
 	        JMenu instructionMenu = new JMenu("How to play");
 	        menuBar.add(instructionMenu);
 	        
@@ -238,6 +242,8 @@ import javax.swing.JTextArea;
 	        this.setJMenuBar(menuBar);
 	    }
 	    
+	    
+	    //keyboard stuffs aka: pain in my ass
 	    private void addToMenu(JMenu menu, String title, ActionListener listener) {
 	    	JMenuItem menuItem = new JMenuItem(title);
 	    	menu.add(menuItem);
@@ -253,6 +259,7 @@ import javax.swing.JTextArea;
 			});
 	    }
 	    
+	    //mousey mouse
 	    private void createMouseHandlers() {
 	    	this.addMouseListener(new MouseAdapter() {
 				@Override
@@ -262,6 +269,7 @@ import javax.swing.JTextArea;
 			});
 	    }
 	    
+	    //this gets us the clicks
 	    private void initializeMouseListener() //trying to add stuff to get where we are
 	    {
 	    	//MouseAdapter a = new MouseAdapter() {
@@ -270,12 +278,6 @@ import javax.swing.JTextArea;
 	    				System.out.printf("Mouse cliked at (%d, %d)\n", e.getX(), e.getY());
 	    				x = (e.getX()-MARGIN_SIZE)/squareSize;
 	    				y = (e.getY()-MARGIN_SIZE)/squareSize;
-//	    				System.out.println(x); //this is working fine, so why not for key :(
-//	    				System.out.println(y);
-	    				
-	    				if(e.getButton()==MouseEvent.BUTTON1) {
-	    					//?
-	    				}
 	    		}
 
 					@Override
@@ -305,9 +307,10 @@ import javax.swing.JTextArea;
 	    		repaint();
 	    }
 	    
+	    //fill in the board. fill in the board. fill in the board.
 	    private void initializeKeyListener() //adding keys to input stuff in sudoku
 	    {
-	        this.addKeyListener(new KeyListener() {
+	        this.addKeyListener(new KeyListener() { //this....NOT canvAs *screams*
 	            public void keyPressed(KeyEvent e) {
 	            	// Called when you push a key down
 	            	System.out.println("key pressed: " + e.getKeyChar());
@@ -365,6 +368,7 @@ import javax.swing.JTextArea;
 	        });
 	    }
 	    
+	    //make board
 	    public SudokuBoard() {
 	        sudoku = new Sudoku("EasyPuzzle");
 	        sudoku.configureBoard();
@@ -422,8 +426,8 @@ import javax.swing.JTextArea;
 	        this.setLocation(100,100);
 	        this.setFocusable(true);
 	        
-	        this.initializeKeyListener();
-	        this.initializeMouseListener();
+	        this.initializeKeyListener(); //NGJE[JGIS{NGIO{EN{ angry face why was I stuck for so long
+	        this.initializeMouseListener(); //WHY DIDNT I JUST LOOK HERE 
 	        
 	        createMenuBar();
 	        createKeyboardHandlers();

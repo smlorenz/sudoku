@@ -39,7 +39,7 @@ public class Sudoku {
      */
     
     //TODO: nested for loops (0-9,,,,0-9)
-    public void loadNumbers(String filename)
+    public void loadNumbers(String filename) //making the board the board
     throws IOException
     {
         Scanner scan = new Scanner(new FileInputStream(filename));
@@ -55,7 +55,7 @@ public class Sudoku {
         		  }
         	  	}
           	}
-        b = filename;
+        b = filename; //initiallize!! we love her
         }
    // }
     
@@ -79,18 +79,17 @@ public class Sudoku {
         try {
         	loadNumbers(filename);
         } catch (IOException e) {
-        	// no way to recover from this, so just repackage as runtime exception
         	throw new RuntimeException(e);
         }
         //configureBoard();
     }
     
-    public void showSolution(String filename) throws IOException {
+    public void showSolution(String filename) throws IOException { //simple and sweet
     	//this.configureBoard();
     	this.loadNumbers(filename);
     }
     
-	public void difficultyLevel() throws IOException {
+	public void difficultyLevel() throws IOException { //helps show solutions
     	if(b.equals("EasyPuzzle")) {
     		this.showSolution("EasyPuzzleSolutions");
     	} else if(b.equals("MediumPuzzle")) {
@@ -135,7 +134,7 @@ public class Sudoku {
 		
 	}
 	
-	public void showHint2() { //this was the first three hints for the puzzles I got
+	public void showHint2() { 
 		if(b.equals("EasyPuzzle")) {
 			this.setNums(6, 6, "1");
 		}
@@ -151,7 +150,7 @@ public class Sudoku {
 		
 	}
 	
-	public void showHint3() { //this was the first three hints for the puzzles I got
+	public void showHint3() { //I chose to do this because I like the idea of knowing how many hints you actually have
 		if(b.equals("EasyPuzzle")) {
 			this.setNums(0, 5, "3");
 		}
