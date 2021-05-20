@@ -103,11 +103,67 @@ public class Sudoku {
     }
 	
 	public void addNumber(String n, int x, int y) { //trying to add number to certain row at certain column??
-		
+		for(int r=0; r<1; r++) {
+			for(int c=0; c<9; c++) {
+				if(board[r][c] == n) {
+					System.out.println(board[r][c]);
+					throw new IllegalArgumentException();
+				}
+				
+			}
+		}
 		this.setNums(y, x, n);
 	}
 	
-	public void showHint() { //show one number on each board for hint 1, hint 2,, and hint 3
+	public void clearNumber(int x, int y) {
+		this.setNums(y, x, "");
+	}
+	
+	public void showHint1() { //this was the first three hints for the puzzles I got
+		if(b.equals("EasyPuzzle")) {
+			this.setNums(1, 0, "2");
+		}
+		if(b.equals("MediumPuzzle")) {
+			this.setNums(6, 6, "6"); //this was unintentional...I love the Lord
+		}
+		if(b.equals("HardPuzzle")) {
+			this.setNums(3, 8, "3");
+		}
+		if(b.equals("EvilPuzzle")) {
+			this.setNums(5, 3, "1");
+		}
+		
+	}
+	
+	public void showHint2() { //this was the first three hints for the puzzles I got
+		if(b.equals("EasyPuzzle")) {
+			this.setNums(6, 6, "1");
+		}
+		if(b.equals("MediumPuzzle")) {
+			this.setNums(4, 4, "4");
+		}
+		if(b.equals("HardPuzzle")) {
+			this.setNums(6, 2, "3");
+		}
+		if(b.equals("EvilPuzzle")) {
+			this.setNums(3, 4, "6");
+		}
+		
+	}
+	
+	public void showHint3() { //this was the first three hints for the puzzles I got
+		if(b.equals("EasyPuzzle")) {
+			this.setNums(0, 5, "3");
+		}
+		if(b.equals("MediumPuzzle")) {
+			this.setNums(6, 4, "5");
+		}
+		if(b.equals("HardPuzzle")) {
+			this.setNums(0, 3, "6");
+		}
+		if(b.equals("EvilPuzzle")) {
+			this.setNums(5, 2, "4");
+		}
 		
 	}
 }

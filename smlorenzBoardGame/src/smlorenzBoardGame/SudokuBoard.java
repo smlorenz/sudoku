@@ -161,12 +161,7 @@ import javax.swing.JTextArea;
 	        addToMenu(hintMenu, "Hint 1", new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                try {
-						sudoku.loadNumbers("EasyPuzzle");
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+	                sudoku.showHint1();
 	                repaint();
 	            }
 	        });
@@ -174,12 +169,7 @@ import javax.swing.JTextArea;
 	        addToMenu(hintMenu, "Hint 2", new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                try {
-						sudoku.loadNumbers("EasyPuzzle");
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+	                sudoku.showHint2();
 	                repaint();
 	            }
 	        });
@@ -187,12 +177,7 @@ import javax.swing.JTextArea;
 	        addToMenu(hintMenu, "Hint 3", new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                try {
-						sudoku.loadNumbers("EasyPuzzle");
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+	                sudoku.showHint3();
 	                repaint();
 	            }
 	        });
@@ -374,6 +359,7 @@ import javax.swing.JTextArea;
 	            	System.out.println("key typed: " + e.getKeyChar());
 	            	if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
 	            		//TODO remove in box
+	            		sudoku.clearNumber(x,  y);
 	            	}
 	            }
 	        });
