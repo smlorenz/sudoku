@@ -55,7 +55,7 @@ public class Sudoku {
         		  }
         	  	}
           	}
-        b = filename; //initiallize!! we love her
+        b = filename; //initiallize!! we love her most of the time
         }
    // }
     
