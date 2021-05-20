@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Sudoku {
@@ -104,6 +105,12 @@ public class Sudoku {
 	
 	public void addNumber(String n, int x, int y) { //trying to add number to certain row at certain column??
 		this.setNums(y, x, n);
+	}
+	
+	public HashSet<String> checkNumber(int x, int y) {
+		HashSet<String> s = new HashSet<>();
+		
+		return s;
 	}
 	
 	public void clearNumber(int x, int y) {
