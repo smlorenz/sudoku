@@ -131,6 +131,7 @@ public class Sudoku {
 		if(b.equals("EvilPuzzle")) {
 			this.setNums(5, 3, "1");
 		}
+		System.out.println("Use your hints wisely!");
 		
 	}
 	
