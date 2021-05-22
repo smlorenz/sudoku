@@ -88,7 +88,7 @@ public class Sudoku {
         	loadNumbers(filename);
         } catch (IOException e) {
         	throw new RuntimeException(e);
-        }
+        } //
     }
     
     public void showSolution(String filename) throws IOException { //simple and sweet
