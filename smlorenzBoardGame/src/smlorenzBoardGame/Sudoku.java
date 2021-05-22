@@ -89,7 +89,6 @@ public class Sudoku {
         } catch (IOException e) {
         	throw new RuntimeException(e);
         }
-        //configureBoard();
     }
     
     public void showSolution(String filename) throws IOException { //simple and sweet
