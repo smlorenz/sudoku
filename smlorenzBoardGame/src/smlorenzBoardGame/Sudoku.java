@@ -8,6 +8,10 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 public class Sudoku {
 	
 	private String[][] board = new String[9][9];	
@@ -108,7 +112,7 @@ public class Sudoku {
 	public void addNumber(String n, int x, int y) {
 		this.checkNumber(x,  y);
 		if(s.contains(n)) { //if our row or col or 3x3 has this number, throws this
-			throw new IllegalNumberException("This number"+n+"already exists!"); //still ugly???
+			throw new IllegalNumberException("This number "+n+" already exists!"); //still ugly???
 		}
 		this.setNums(y, x, n);
 	}
@@ -140,8 +144,14 @@ public class Sudoku {
 				}
 			}
 		}
-		
 		return s;
+	}
+	
+	public boolean checkException(String n) {
+		if(s.contains(n)) {
+			return false;
+		}
+		return true;
 	}
 	
 	public void clearNumber(int x, int y) {
@@ -161,8 +171,6 @@ public class Sudoku {
 		if(b.equals("EvilPuzzle")) {
 			this.setNums(5, 3, "1");
 		}
-		System.out.println("Use your hints wisely!"); //jsut a lil tip
-		
 	}
 	
 	public void showHint2() { 

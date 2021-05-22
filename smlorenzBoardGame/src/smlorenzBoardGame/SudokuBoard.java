@@ -162,6 +162,11 @@ import javax.swing.JTextArea;
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
 	                sudoku.showHint1(); //this was easy.
+	                JTextArea textArea = new JTextArea(10, 30);
+	                 textArea.setText("Use your hints wisely!");
+	                 textArea.setEditable(false);
+	                 JScrollPane scrollPane = new JScrollPane(textArea);
+	                 JOptionPane.showMessageDialog(canvas, scrollPane);
 	                repaint();
 	            }
 	        });
@@ -349,7 +354,7 @@ import javax.swing.JTextArea;
 	            	if (e.getKeyChar() == KeyEvent.VK_9) {
 	            		sudoku.addNumber("9", x, y);
 	            		System.out.println("You have added 9."); 
-	            	}
+	            	} 
 	            	repaint();
 	            }
 	            public void keyReleased(KeyEvent e){
