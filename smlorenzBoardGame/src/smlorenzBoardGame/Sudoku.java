@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Sudoku {
 	
 	private String[][] board = new String[9][9];	
 	private String b;
+	private Set<String> s = new HashSet<>();
 	
     
     /**
@@ -103,12 +105,34 @@ public class Sudoku {
     	}
     }
 	
-	public void addNumber(String n, int x, int y) { //trying to add number to certain row at certain column??
+	public void addNumber(String n, int x, int y) {
+		this.checkNumber(x,  y);
+		if(s.contains(n)) { //if our row has this number, throws this
+			throw new IllegalArgumentException(); //will makw this into own exception, just need to leave for testing
+		}
 		this.setNums(y, x, n);
 	}
 	
-	public HashSet<String> checkNumber(int x, int y) {
-		HashSet<String> s = new HashSet<>();
+	public Set<String> checkNumber(int x, int y) {
+		this.s = new HashSet<>();
+		
+		if(b.equals("EasyPuzzle") || b.equals("MediumPuzzle") || b.equals("HardPuzzle") || b.equals("EvilPuzzle")) {
+		for(int i=0; i<9; i++) { //going through rows
+			if(i == y) { //need what row we are at
+				for(int k=0; k<9; k++) { //now we cycle through that row
+					s.add(this.get(y, k)); //add whatever is at that row and those cols
+					}
+				}
+			}
+		
+			for(int j=0; j<9; j++) { //going through rows
+				if(j == x) { //need what row we are at
+					for(int l=0; l<9; l++) { //now we cycle through that row
+						s.add(this.get(l, x)); //add whatever is at that row and those cols
+						}
+					}
+				}
+		}
 		
 		return s;
 	}
