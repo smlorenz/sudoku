@@ -110,7 +110,7 @@ public class Sudoku {
     }
 	
 	public void addNumber(String n, int x, int y) {
-		this.checkNumber(x,  y);
+		this.checkNumber(x,  y); //making our call.
 		if(s.contains(n)) { //if our row or col or 3x3 has this number, throws this
 			throw new IllegalNumberException("This number "+n+" already exists!"); //still ugly???
 		}
@@ -118,6 +118,7 @@ public class Sudoku {
 	}
 	
 	public Set<String> checkNumber(int x, int y) {
+		//initialize
 		this.s = new HashSet<>();
 		
 		if(b.equals("EasyPuzzle") || b.equals("MediumPuzzle") || b.equals("HardPuzzle") || b.equals("EvilPuzzle")) {
