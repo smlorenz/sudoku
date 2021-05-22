@@ -107,8 +107,8 @@ public class Sudoku {
 	
 	public void addNumber(String n, int x, int y) {
 		this.checkNumber(x,  y);
-		if(s.contains(n)) { //if our row has this number, throws this
-			throw new IllegalArgumentException(); //will makw this into own exception, just need to leave for testing
+		if(s.contains(n)) { //if our row or col or 3x3 has this number, throws this
+			throw new IllegalNumberException("This number"+n+"already exists!"); //still ugly???
 		}
 		this.setNums(y, x, n);
 	}
@@ -125,13 +125,20 @@ public class Sudoku {
 				}
 			}
 		
-			for(int j=0; j<9; j++) { //going through rows
-				if(j == x) { //need what row we are at
-					for(int l=0; l<9; l++) { //now we cycle through that row
-						s.add(this.get(l, x)); //add whatever is at that row and those cols
+			for(int j=0; j<9; j++) { //going through col
+				if(j == x) { //need what col we are at
+					for(int l=0; l<9; l++) { //now we cycle through that col
+						s.add(this.get(l, x)); //add whatever is at that col and those rows
 						}
 					}
 				}
+			int R = y/3;//need where we are
+			int C = x/3;
+			for(int i=R*3; i<(R*3)+3; i++) { //checks 3x3 row and col
+				for(int j=C*3; j<(C*3)+3; j++) {
+					s.add(this.get(i, j));
+				}
+			}
 		}
 		
 		return s;
