@@ -105,7 +105,7 @@ public class Sudoku {
     		this.showSolution("HardPuzzleSolutions");
     	} else if(b.equals("EvilPuzzle")) {
     		this.showSolution("EvilPuzzleSolutions");
-    	}
+    	} //random change
     }
 	
 	public void addNumber(String n, int x, int y) {
