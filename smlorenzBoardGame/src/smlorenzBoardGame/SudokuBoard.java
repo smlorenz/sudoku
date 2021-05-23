@@ -320,41 +320,114 @@ import javax.swing.JTextArea;
 	            	// Called when you push a key down
 	            	System.out.println("key pressed: " + e.getKeyChar());
 	            	if (e.getKeyChar() == KeyEvent.VK_1) {
-	            		sudoku.addNumber("1", x, y);
-	            		System.out.println("You have added 1."); 
+	            		try {
+	            			sudoku.addNumber("1", x, y);
+		            		System.out.println("You have added 1."); 
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			}
 	            	}
 	            	if (e.getKeyChar() == KeyEvent.VK_2) {
-	            		sudoku.addNumber("2", x, y);
-	            		System.out.println("You have added 2."); 
+	            		try {
+	            			sudoku.addNumber("2", x, y);
+		            		System.out.println("You have added 2.");
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			} 
 	            	}
 	            	if (e.getKeyChar() == KeyEvent.VK_3) {
-	            		sudoku.addNumber("3", x, y);
-	            		System.out.println("You have added 3."); 
+	            		try {
+	            			sudoku.addNumber("3", x, y);
+		            		System.out.println("You have added 3.");
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			}  
 	            	}
 	            	if (e.getKeyChar() == KeyEvent.VK_4) {
-	            		sudoku.addNumber("4", x, y);
-	            		System.out.println("You have added 4."); 
+	            		try {
+	            			sudoku.addNumber("4", x, y);
+		            		System.out.println("You have added 4.");
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			} 
 	            	}
 	            	if (e.getKeyChar() == KeyEvent.VK_5) {
-	            		sudoku.addNumber("5", x, y);
-	            		System.out.println("You have added 5."); 
+	            		try {
+	            			sudoku.addNumber("5", x, y);
+		            		System.out.println("You have added 5.");
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			} 
 	            	}
 	            	if (e.getKeyChar() == KeyEvent.VK_6) {
-	            		sudoku.addNumber("6", x, y);
-	            		System.out.println("You have added 6."); 
+	            		try {
+	            			sudoku.addNumber("6", x, y);
+		            		System.out.println("You have added 6.");
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			}  
 	            	}
 	            	if (e.getKeyChar() == KeyEvent.VK_7) {
-	            		sudoku.addNumber("7", x, y);
-	            		System.out.println("You have added 7."); 
+	            		try {
+	            			sudoku.addNumber("7", x, y);
+		            		System.out.println("You have added 7.");
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			}  
 	            	}
 	            	if (e.getKeyChar() == KeyEvent.VK_8) {
-	            		sudoku.addNumber("8", x, y);
-	            		System.out.println("You have added 8."); 
+	            		try {
+	            			sudoku.addNumber("8", x, y);
+		            		System.out.println("You have added 8.");
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			} 
 	            	}
 	            	if (e.getKeyChar() == KeyEvent.VK_9) {
-	            		sudoku.addNumber("9", x, y);
-	            		System.out.println("You have added 9."); 
+	            		try {
+	            			sudoku.addNumber("9", x, y);
+		            		System.out.println("You have added 9.");
+		    			} catch(IllegalNumberException n) {
+		    				JTextArea textArea = new JTextArea(10, 30);
+			                 textArea.setText("You cannot put that there!");
+			                 textArea.setEditable(false);
+			                 JScrollPane scrollPane = new JScrollPane(textArea);
+			                 JOptionPane.showMessageDialog(canvas, scrollPane);
+		    			} 
 	            	} 
+	            	
 	            	repaint();
 	            }
 	            public void keyReleased(KeyEvent e){
