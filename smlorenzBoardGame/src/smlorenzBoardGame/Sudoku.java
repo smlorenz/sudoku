@@ -105,7 +105,7 @@ public class Sudoku {
     		this.showSolution("HardPuzzleSolutions");
     	} else if(b.equals("EvilPuzzle")) {
     		this.showSolution("EvilPuzzleSolutions");
-    	} //random change
+    	} 
     }
 	
 	public void addNumber(String n, int x, int y) {
@@ -136,7 +136,7 @@ public class Sudoku {
 						}
 					}
 				}
-			int R = y/3;//need where we are //
+			int R = y/3;//need where we are 
 			int C = x/3;
 			for(int i=R*3; i<(R*3)+3; i++) { //checks 3x3 row and col
 				for(int j=C*3; j<(C*3)+3; j++) {

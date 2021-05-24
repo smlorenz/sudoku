@@ -155,6 +155,7 @@ import javax.swing.JTextArea;
 	        
 	        //everyone loves a hint or 3... I did it like this because when I play
 	        //games I like knowing EXACTLY how many hints I have 
+	        //plus this is just egular sudoku syntax
 	        JMenu hintMenu = new JMenu("Hints");
 	        menuBar.add(hintMenu);
 	        
@@ -287,25 +288,23 @@ import javax.swing.JTextArea;
 
 					@Override
 					public void mousePressed(MouseEvent e) {
-						// TODO Auto-generated method stub
-						
+						System.out.printf("mouse pressed at (%d, %d)\n", e.getX(), e.getY());
 					}
 
 					@Override
 					public void mouseReleased(MouseEvent e) {
-						// TODO Auto-generated method stub
-						
+						System.out.printf("mouse released at (%d, %d)\n", e.getX(), e.getY());
 					}
 
 					@Override
 					public void mouseEntered(MouseEvent e) {
-						// TODO Auto-generated method stub
+						// don't really need this
 						
 					}
 
 					@Override
 					public void mouseExited(MouseEvent e) {
-						// TODO Auto-generated method stub
+						// dont really need
 						
 					}
 	    	});
@@ -435,11 +434,9 @@ import javax.swing.JTextArea;
 	            	System.out.println("key released: " + e.getKeyChar());
 	            }
 	            public void keyTyped(KeyEvent e) {
-	            	// Gets called when you push a key down and then release it,
-	            	// without pushing any other keys in between
+	            	//delete
 	            	System.out.println("key typed: " + e.getKeyChar());
 	            	if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
-	            		//TODO remove in box
 	            		sudoku.clearNumber(x,  y);
 	            	}
 	            }
